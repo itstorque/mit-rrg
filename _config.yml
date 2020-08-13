@@ -18,3 +18,9 @@ collections:
   members:
     output: true
     permalink: /members/:path/
+
+header_pages:
+ - index.html
+ - about.html
+ - projects.html
+ - partners.html

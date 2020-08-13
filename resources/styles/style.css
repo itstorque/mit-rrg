@@ -1,6 +1,12 @@
+:root {
+  --big_logo_c1: #003B4D;
+  --big_logo_c2: white;
+}
+
 body {
 	width: 80%;
 	margin-left: 10%;
+	font-family: 'Nunito', sans-serif;
 }
 
 h1 {

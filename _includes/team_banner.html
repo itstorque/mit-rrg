@@ -3,12 +3,18 @@
 {% assign team_members = site.members
 	| where_exp: "team_member", "team_member.teams contains include.team_name" %}
 
-{% for team_member in team_members %}
+<div class="team_members">
 
-	<div class="team_member">
-		<img src="/resources/headshots/{{ team_member.title | downcase }}.png" class="headshot_circle"/>
+	{% for team_member in team_members %}
 
-		<p>{{ team_member.name }}</p>
-	</div>
+		<div class="team_member{% if team_member.team_lead == include.team_name %} team_lead{% endif %}">
+			<img src="/resources/headshots/{{ team_member.title | downcase }}.png" class="headshot_circle"/>
+			<p>{{ team_member.name }}</p>
+			<div class="team_lead_star"><img src="/resources/images/star.svg"/>
+			  <span class="tooltiptext">Team Lead</span>
+			</div>
+		</div>
 
-{% endfor %}
+	{% endfor %}
+
+</div>

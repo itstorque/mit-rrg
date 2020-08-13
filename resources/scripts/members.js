@@ -1,7 +1,5 @@
 window.addEventListener('load', (event) => {
 
-	console.log("hi")
-
 	const colorThief = new ColorThief();
 	const cards = document.getElementsByClassName('card');
 
@@ -19,8 +17,6 @@ window.addEventListener('load', (event) => {
 			palette = colorThief.getPalette(img);
 
 			c_sum = palette.map(x => x[0] + x[1] + x[2]);
-
-			console.log(c_sum)
 
 			c_sum = c_sum.map(x => ((x > 255*1.5) ? 0 : x))
 

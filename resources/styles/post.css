@@ -36,10 +36,17 @@
 	font-size: 0.8em;
 }
 
+.post .team_members {
+	display: flex;
+	flex-flow: row wrap;
+}
+
 .post .team_member {
 	vertical-align: middle;
 	display: inline-block;
+	width: max-content;
 	margin: -20px 0px 10px 0px;
+	order: 2;
 }
 
 .post .team_member p {
@@ -47,6 +54,58 @@
 	display: inline-block;
 	vertical-align: middle;
 	color: #888;
+}
+
+.post .team_lead {
+	order: 1;
+}
+
+.post .team_lead_star {
+	vertical-align: middle;
+	margin-left: 5px;
+	display: inline-block;
+
+	position: relative;
+}
+
+.post .team_member:not(.team_lead) .team_lead_star {
+	display: none;
+}
+
+.team_lead_star .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #F5A623;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 0.8em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+
+  position: absolute;
+  z-index: 1;
+
+  width: 120px;
+  bottom: 2.9em;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.team_lead_star:hover::before {
+	display: block;
+	position: absolute;
+	width: 100%;
+	margin-top: -1.1em;
+	text-align: center;
+	content : "\25BE"; /* triangle pointing down character */
+	font-size: 1.4em;
+	color: #F5A623;
+}
+
+.team_lead_star:hover .tooltiptext {
+  visibility: visible;
 }
 
 .post img.headshot_circle {
