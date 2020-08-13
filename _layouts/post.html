@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="post">
+
+	<img src="{{ page.image }}" class="post_img"/>
+
+	<h1 class="post_title">{{ page.title }}</h1>
+
+	{% capture member_path %}_members/{{ page.author_kerb }}.md{% endcapture %}
+
+	{% assign author = site.members | where:"path", member_path | first %}
+
+	{{mypage.title}}
+
+	<p>{{ page.date | date: '%B %d, %Y' }} - Written by {{ author.name }}</p>
+
+	{% include team_banner.html team_name=page.team %}
+
+	<br/>
+
+	{{ content }}
+
+</div>

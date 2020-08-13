@@ -1,151 +1,27 @@
 ---
 layout: default
 title: Home
+color_theif: hey
+include_scripts:
+ - members
 ---
-
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&family=PT+Serif:wght@700&family=Raleway:wght@900&display=swap" rel="stylesheet">
-
-<style>
-
-	.card_container {
-		display: flex;
-		/*justify-content: space-around;
-		width: content-fit;
-		align-content: flex-start;*/
-		display: grid;
-		grid-template-columns: repeat(auto-fill, 200px);
-		grid-gap: 1rem;
-		justify-content: space-around;
-
-		flex-wrap: wrap;
-		margin: 20px;
-	}
-
-	.card {
-		color: white;
-		font-family: 'Nunito', sans-serif;
-		width: 200px;
-		margin: 10px 0px;
-		display: inline-block;
-	}
-
-	.card img {
-		width: 100%;
-		margin: 0px;
-		display: block;
-	}
-
-	.card img.lower {
-		display: none;
-	}
-
-	.card:nth-child(even) img.upper {
-		display: none;
-	}
-
-	.card:nth-child(even) img.lower {
-		display: block;
-	}
-
-	.card div {
-		margin: 10px 10px;
-		padding: 15px;
-		margin: 0;
-		list-style: none;
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		flex-grow: 1;
-	}
-
-	.card h5 {
-		font-size: 1em;
-		margin: 0px;
-		width: 100%;
-		font-weight: 400;
-		margin-bottom: 40px;
-	}
-
-	.card h6 {
-		width: min-content;
-		max-width: 40%;
-		margin: 0px;
-		font-weight: bold;
-		font-size: 0.8em;
-		vertical-align: bottom;
-	    display: table-cell;
-		max-height: 30px;
-		max-lines: 2;
-	}
-
-	.card h6.spec {
-		width: fit-content;
-		text-align: right;
-		font-weight: 400;
-		max-width: 60%;
-	}
-
-</style>
-
-<!-- Importing color-theif from a CDN -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js" integrity="sha512-mMe7BAZPOkGbq+zhRBMNV3Q+5ZDzcUEOJoUYXbHpEcODkDBYbttaW7P108jX66AQgwgsAjvlP4Ayb/XLJZfmsg==" crossorigin="anonymous"></script>
 
 <div class="card_container">
 
 	{% for member in site.members %}
 
-		<div class="card" style="background-color: #000;">
-			<img src="/resources/headshots/{{ member.title | downcase }}.png" class="upper"/>
+		<div class="card">
+			<img src="../resources/headshots/{{ member.title | downcase }}.png" class="upper"/>
 			<div>
 				<h5>{{ member.name }}</h5>
 
 				<h6>{{ member.affiliation }}</h6>
 				<h6 class="spec">{{ member.detail }}</h6>
 			</div>
-			<img src="/resources/headshots/{{ member.title | downcase }}.png" class="lower"/>
+			<img src="../resources/headshots/{{ member.title | downcase }}.png" class="lower"/>
 		</div>
 
 	{% endfor %}
-
-	<script>
-		const colorThief = new ColorThief();
-		const cards = document.getElementsByClassName('card');
-
-		Array.prototype.forEach.call(cards, function (card, index) {
-
-			img = card.getElementsByClassName("upper")[0];
-
-			set_card_color = function(img) {
-
-				palette = colorThief.getPalette(img);
-
-				c_sum = palette.map(x => x[0] + x[1] + x[2]);
-
-				console.log(c_sum)
-
-				c_sum = c_sum.map(x => ((x > 255*1.5) ? 0 : x))
-
-				color = palette[c_sum.indexOf(Math.max(...c_sum))];
-
-				card.style.backgroundColor = "rgb("+color[0]+","+color[1]+","+color[2]+")";
-
-			}
-
-			if (img.complete) {
-
-				set_card_color(img);
-
-			} else {
-
-				img.addEventListener('load', function() { set_card_color(img); } );
-
-			}
-
-		});
-
-	</script>
-
 
 
 </div>

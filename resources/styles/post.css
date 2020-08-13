@@ -1,0 +1,59 @@
+.post {
+	width: 90%;
+	margin: 5%;
+}
+
+.post img.post_img {
+	width: 110%;
+	margin: 1em -5%;
+	height: 300px;
+	max-height: 40vh;
+	object-fit: cover;
+}
+
+.post h1.post_title {
+	font-size: 2em;
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+	color: #666;
+}
+
+.post h1 {
+	font-size: 1.2em;
+}
+
+.post h2 {
+	font-size: 1.1em;
+}
+
+.post h3 {
+	font-size: 1em;
+}
+
+.post h6.team_name {
+	font-family: "Nunito", sans-serif;
+	font-weight: 900;
+	font-size: 0.8em;
+}
+
+.post .team_member {
+	vertical-align: middle;
+	display: inline-block;
+	margin: -20px 0px 10px 0px;
+}
+
+.post .team_member p {
+	font-size: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	color: #888;
+}
+
+.post img.headshot_circle {
+	width: 2em;
+	height: 2em;
+	border-radius: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px 10px 0px 20px;
+}

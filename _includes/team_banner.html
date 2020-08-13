@@ -1,0 +1,14 @@
+<h6 class="team_name">TEAM {{ include.team_name | upcase }}</h6>
+
+{% assign team_members = site.members
+	| where_exp: "team_member", "team_member.teams contains include.team_name" %}
+
+{% for team_member in team_members %}
+
+	<div class="team_member">
+		<img src="/resources/headshots/{{ team_member.title | downcase }}.png" class="headshot_circle"/>
+
+		<p>{{ team_member.name }}</p>
+	</div>
+
+{% endfor %}

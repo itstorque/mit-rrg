@@ -1,0 +1,101 @@
+body {
+	width: 80%;
+	margin-left: 10%;
+}
+
+h1 {
+	font-family: 'Raleway', serif;
+}
+
+h3 {
+	font-family: 'PT Serif', serif;
+}
+
+p {
+	font-family: 'Nunito', sans-serif;
+}
+
+/* MEMBERS PAGE */
+
+/** MEMBER CARDS **/
+
+.card_container {
+	display: flex;
+	/*justify-content: space-around;
+	width: content-fit;
+	align-content: flex-start;*/
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	grid-gap: 1rem;
+	justify-content: space-around;
+
+	flex-wrap: wrap;
+	margin: 20px;
+}
+
+.card {
+	color: white;
+	font-family: 'Nunito', sans-serif;
+	width: 200px;
+	margin: 10px 0px;
+	display: inline-block;
+	background-color: #444;
+	transition: 1s ease-in;
+}
+
+.card img {
+	width: 100%;
+	height: 200px;
+	margin: 0px;
+	display: block;
+}
+
+.card img.lower {
+	display: none;
+}
+
+.card:nth-child(even) img.upper {
+	display: none;
+}
+
+.card:nth-child(even) img.lower {
+	display: block;
+}
+
+.card div {
+	margin: 10px 10px;
+	padding: 15px;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-grow: 1;
+}
+
+.card h5 {
+	font-size: 1em;
+	margin: 0px;
+	width: 100%;
+	font-weight: 400;
+	margin-bottom: 40px;
+}
+
+.card h6 {
+	width: min-content;
+	max-width: 40%;
+	margin: 0px;
+	font-weight: bold;
+	font-size: 0.8em;
+	vertical-align: bottom;
+    display: table-cell;
+	max-height: 30px;
+	max-lines: 2;
+}
+
+.card h6.spec {
+	width: fit-content;
+	text-align: right;
+	font-weight: 400;
+	max-width: 60%;
+}
