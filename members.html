@@ -1,0 +1,152 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&family=PT+Serif:wght@700&family=Raleway:wght@900&display=swap" rel="stylesheet">
+
+<style>
+
+	.card_container {
+		display: flex;
+		/*justify-content: space-around;
+		width: content-fit;
+		align-content: flex-start;*/
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 200px);
+		grid-gap: 1rem;
+		justify-content: space-around;
+
+		flex-wrap: wrap;
+		margin: 20px;
+	}
+
+	.card {
+		color: white;
+		font-family: 'Nunito', sans-serif;
+		width: 200px;
+		margin: 10px 0px;
+		display: inline-block;
+	}
+
+	.card img {
+		width: 100%;
+		margin: 0px;
+		display: block;
+	}
+
+	.card img.lower {
+		display: none;
+	}
+
+	.card:nth-child(even) img.upper {
+		display: none;
+	}
+
+	.card:nth-child(even) img.lower {
+		display: block;
+	}
+
+	.card div {
+		margin: 10px 10px;
+		padding: 15px;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		flex-grow: 1;
+	}
+
+	.card h5 {
+		font-size: 1em;
+		margin: 0px;
+		width: 100%;
+		font-weight: 400;
+		margin-bottom: 40px;
+	}
+
+	.card h6 {
+		width: min-content;
+		max-width: 50%;
+		margin: 0px;
+		font-weight: bold;
+		font-size: 0.8em;
+		vertical-align: bottom;
+	    display: table-cell;
+		max-height: 30px;
+		max-lines: 2;
+	}
+
+	.card h6.spec {
+		width: fit-content;
+		text-align: right;
+		font-weight: 400;
+	}
+
+</style>
+
+<div class="card_container">
+
+	<div class="card" style="background-color: #557169;">
+		<img src="1.png" class="upper"/>
+		<div>
+			<h5>Finley Farrow</h5>
+
+			<h6>MIT UG</h6>
+			<h6 class="spec">Mechanical Engineering</h6>
+		</div>
+		<img src="1.png" class="lower"/>
+	</div>
+
+	<div class="card" style="background-color: #557169;">
+		<img src="2.png" class="upper"/>
+		<div>
+			<h5>Pollyanna Espinosa</h5>
+
+			<h6>MIT GRAD</h6>
+			<h6 class="spec">Ocean Engineering</h6>
+		</div>
+		<img src="2.png" class="lower"/>
+	</div>
+
+	<div class="card" style="background-color: #887D51;">
+		<img src="3.png" class="upper"/>
+		<div>
+			<h5>Stephen Brady</h5>
+
+			<h6>Harvard UG</h6>
+			<h6 class="spec">Electrical Engineering</h6>
+		</div>
+		<img src="3.png" class="lower"/>
+	</div>
+
+	<div class="card" style="background-color: #2F3B3D;">
+		<img src="4.png" class="upper"/>
+		<div>
+			<h5>Angel Hernandez</h5>
+
+			<h6>MIT GRAD</h6>
+			<h6 class="spec">Some Research Field</h6>
+		</div>
+		<img src="4.png" class="lower"/>
+	</div>
+
+	<div class="card" style="background-color: #C5765F;">
+		<img src="5.png" class="upper"/>
+		<div>
+			<h5>Tanvir Milne</h5>
+
+			<h6>MIT UG</h6>
+			<h6 class="spec">Electrical Engineering</h6>
+		</div>
+		<img src="5.png" class="lower"/>
+	</div>
+
+	<div class="card" style="background-color: #2F6395;">
+		<img src="6.png" class="upper"/>
+		<div>
+			<h5>Leanna Hendricks</h5>
+
+			<h6>UWaterloo GRAD</h6>
+			<h6 class="spec">Something Engineer</h6>
+		</div>
+		<img src="6.png" class="lower"/>
+	</div>
+
+</div>
