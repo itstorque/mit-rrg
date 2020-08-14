@@ -1,4 +1,41 @@
 ---
 layout: default
 title: About
+
+color_theif: true
+include_scripts:
+ - members
 ---
+
+<!-- TODO: create member and inline_member include and automate members -->
+
+<section>
+	<h1>RRG Members</h1>
+
+	<p>Members of the RRG are undergraduate and graduate students studying a variety of fields and majors at MIT and other universities.</p>
+
+	<p>The RRG is guided and managed through the MIT Environmental Solutions Initiative by the director, Prof. John E. Fernández.</p>
+
+	<br/>
+
+	{% include members.html %}
+
+</section>
+
+<section>
+
+	<h1>Faculty Advisor</h1>
+
+	<div class="inline-member">
+		<img src="{{ site.baseurl }}/resources/headshots/fernande.jpg"/>
+
+		<div>
+			<h5>John E. Fernandez</h5>
+
+			<h6>MIT</h6>
+			<h6 class="spec">Professor and Director of the Environmental Solutions Initiative</h6>
+		</div>
+
+	</div>
+
+</section>

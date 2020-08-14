@@ -8,8 +8,7 @@ url: "https://esiresponse.mit.edu"
 
 lang: en_US
 
-markdown:    kramdown
-highlighter: pygments
+markdown: kramdown
 
 sass:
   style: compressed

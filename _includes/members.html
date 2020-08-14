@@ -1,0 +1,19 @@
+<div class="card_container">
+
+	{% for member in site.members %}
+
+		<div class="card">
+			<img src="{{ site.baseurl }}/resources/headshots/{{ member.title | downcase }}.png" class="upper"/>
+			<div>
+				<h5>{{ member.name }}</h5>
+
+				<h6>{{ member.affiliation }}</h6>
+				<h6 class="spec">{{ member.detail }}</h6>
+			</div>
+			<img src="{{ site.baseurl }}/resources/headshots/{{ member.title | downcase }}.png" class="lower"/>
+		</div>
+
+	{% endfor %}
+
+
+</div>
