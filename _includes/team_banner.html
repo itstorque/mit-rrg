@@ -8,9 +8,9 @@
 	{% for team_member in team_members %}
 
 		<div class="team_member{% if team_member.team_lead == include.team_name %} team_lead{% endif %}">
-			<img src="/resources/headshots/{{ team_member.title | downcase }}.png" class="headshot_circle"/>
+			<img src="{{ site.baseurl }}/resources/headshots/{{ team_member.title | downcase }}.png" class="headshot_circle"/>
 			<p>{{ team_member.name }}</p>
-			<div class="team_lead_star"><img src="/resources/images/star.svg"/>
+			<div class="team_lead_star"><img src="{{ site.baseurl }}/resources/images/star.svg"/>
 			  <span class="tooltiptext">Team Lead</span>
 			</div>
 		</div>
