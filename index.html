@@ -3,9 +3,19 @@ layout: default
 title: Home
 ---
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+
+
+
+
 <div class="splash">
+	<!-- {% include image_resolver.html src="jellyfish.jpg" class="bg" %} -->
 	<div class="bg">
+		{% include image_resolver.html src="jellyfish.jpg" class="rellax" rellax_speed="-7" %}
 	</div>
+
 	{% include big_logo.html %}
 </div>
 
@@ -15,8 +25,24 @@ title: Home
 
 <h3>Project Highlights</h3>
 
+{% include projects.html %}
+
 <h3>Support Us</h3>
 
 <p>Please consider joining us as we work to connect MIT with the world on a broad range of important environmental issues. We seek partners of all types interested in constructive actions for a humane and sustainable future.</p>
 
 {% include reach_us.html %}
+
+<script>
+
+	document.addEventListener("load", setupRellax);
+
+	var rellax = new Rellax('.rellax', {
+		center:true
+	});
+
+	function setupRellax() {
+		rellax.refresh();
+	}
+
+</script>

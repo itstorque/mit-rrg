@@ -1,0 +1,21 @@
+<div class="project_cards">
+
+	{% for project in site.projects %}
+
+		<div class="project_card">
+
+			{% include image_resolver.html src=project.image %}
+
+			<h3>{{ project.name }}</h3>
+
+			<p>{{ project.excerpt | strip_html | truncatewords: 50 }}</p>
+
+		</div>
+
+	{% endfor %}
+
+	<div style="width: 15vw"><!-- This is a spacer for the end of the project_cards --></div>
+
+</div>
+
+<div class="project_spacer"></div>

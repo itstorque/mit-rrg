@@ -1,0 +1,10 @@
+{% assign latest_post=site.posts.last %}
+
+<div class="highlighted_story">
+	{% include image_resolver.html src=latest_post.image %}
+
+	<div class="content">
+		<h1>{{ latest_post.title }}</h1>
+		<p>{{ latest_post.excerpt | strip_html | truncatewords: 70 }}</p>
+	</div>
+</div>
