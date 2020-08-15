@@ -13,7 +13,8 @@ sitemap: false
 	{%- if file.url -%}
 		{%- assign end = file.url | slice: -1 -1 -%}
 		{%- if end == "/" -%}
-			{{ file.url }}index.html,
+			{% assign size = file.url | size | minus: 1 %}
+			{{ file.url | slice: 0, size }}~,
 		{%- else -%}
 			{{ file.url }},
 		{%- endif -%}
