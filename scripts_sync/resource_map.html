@@ -1,0 +1,25 @@
+---
+# This is meant for use within a shell or a browser with no js.
+# This currently has no support for _data
+sitemap: false
+---
+{% assign all_files =
+	  		  site.static_files
+	| concat: site.pages
+	| concat: site.documents
+%}{{
+
+}}{% for file in all_files %}
+	{%- if file.url -%}
+		{%- assign end = file.url | slice: -1 -1 -%}
+		{%- if end == "/" -%}
+			{{ file.url }}index.html,
+		{%- else -%}
+			{{ file.url }},
+		{%- endif -%}
+	{%- else -%}
+		{%- if file.path != "/README.md" -%}
+			{{ file.path }},
+		{%- endif -%}
+	{%- endif -%}
+{% endfor %}
