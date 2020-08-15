@@ -27,6 +27,7 @@ header_pages:
  - about.html
  - projects.html
  - partners.html
+ - support.html
 
 defaults:
   - scope:

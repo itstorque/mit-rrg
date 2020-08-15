@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="30px" viewBox="0 0 32 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>clarity-heart-solid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Heart" transform="translate(-546.000000, -376.000000)">
+            <g id="clarity-heart-solid" transform="translate(544.000000, 373.000000)">
+                <g id="Icon" fill="var(--heart_c1)">
+                    <path d="M33,7.64 C31.66,4.89 27.8,2.64 23.31,3.95 C21.1644598,4.56973877 19.2925145,5.8987847 18,7.72 C16.7074855,5.8987847 14.8355402,4.56973877 12.69,3.95 C8.19,2.66 4.34,4.89 3,7.64 C1.12,11.49 1.9,15.82 5.32,20.51 C8,24.18 11.83,27.9 17.39,32.22 C17.7515222,32.5019639 18.2584778,32.5019639 18.62,32.22 C24.17,27.91 28.01,24.22 30.69,20.51 C34.1,15.82 34.88,11.49 33,7.64 Z" id="Icon-Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
