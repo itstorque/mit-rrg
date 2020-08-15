@@ -12,7 +12,7 @@ title: Home
 
 <div class="splash">
 	<!-- {% include image_resolver.html src="jellyfish.jpg" class="bg" %} -->
-	<div class="bg">
+	<div class="bg" id="splash_bg">
 		{% include image_resolver.html src="jellyfish.jpg" class="rellax" rellax_speed="-7" %}
 	</div>
 
@@ -31,11 +31,11 @@ title: Home
 
 <p>Please consider joining us as we work to connect MIT with the world on a broad range of important environmental issues. We seek partners of all types interested in constructive actions for a humane and sustainable future.</p>
 
-{% include reach_us.html %}
-
 <script>
 
-	document.addEventListener("load", setupRellax);
+	window.addEventListener("load", setupRellax);
+
+	document.getElementById("splash_bg").addEventListener('load', setupRellax);
 
 	var rellax = new Rellax('.rellax', {
 		center:true

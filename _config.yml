@@ -17,6 +17,7 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+    layout: projects
   members:
     output: true
     permalink: /members/:path/
@@ -26,3 +27,10 @@ header_pages:
  - about.html
  - projects.html
  - partners.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

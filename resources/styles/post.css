@@ -66,6 +66,10 @@
 	display: inline-block;
 
 	position: relative;
+
+	transform: rotate(-72deg) translate(0);
+	transition: all 0.08s ease-out;
+	transition-delay: 0.1s;
 }
 
 .post .team_member:not(.team_lead) .team_lead_star {
@@ -73,27 +77,32 @@
 }
 
 .team_lead_star .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #F5A623;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  font-size: 0.8em;
-  font-weight: 900;
-  letter-spacing: 0.05em;
+	visibility: hidden;
+	width: 120px;
+	background-color: #F5A623;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	font-size: 0.8em;
+	font-weight: 900;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 0.05em;
 
-  position: absolute;
-  z-index: 1;
+	position: absolute;
+	z-index: 1;
 
-  width: 120px;
-  bottom: 2.9em;
-  left: 50%;
-  margin-left: -60px;
+	width: 120px;
+	bottom: 2.9em;
+	left: 50%;
+	margin-left: -60px;
+
+	opacity: 0;
+	transition: all 0.2s ease-out;
+	transition-delay: 0s;
 }
 
-.team_lead_star:hover::before {
+.team_lead_star::before {
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -102,10 +111,26 @@
 	content : "\25BE"; /* triangle pointing down character */
 	font-size: 1.4em;
 	color: #F5A623;
+
+	opacity: 0;
+	transition: all 0.2s ease-out;
+	transition-delay: 0s;
+}
+
+.team_lead_star:hover {
+	transform: rotate(0deg) translateX(-4px) translateY(2px);
+	transition-delay: 0s;
 }
 
 .team_lead_star:hover .tooltiptext {
-  visibility: visible;
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.15s;
+}
+
+.team_lead_star:hover::before {
+	opacity: 1;
+	transition-delay: 0.15s;
 }
 
 .post img.headshot_circle {

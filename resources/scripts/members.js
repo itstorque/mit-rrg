@@ -5,6 +5,14 @@ window.addEventListener('load', (event) => {
 
 	Array.prototype.forEach.call(cards, function (card, index) {
 
+		card.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = this.getAttribute("secondary-color");
+        });
+
+        card.addEventListener("mouseleave", function() {
+			this.style.backgroundColor = this.getAttribute("primary-color");
+        });
+
 		img = card.getElementsByClassName("upper")[0];
 
 		set_card_color = function(img) {
@@ -20,9 +28,23 @@ window.addEventListener('load', (event) => {
 
 			c_sum = c_sum.map(x => ((x > 255*1.5) ? 0 : x))
 
-			color = palette[c_sum.indexOf(Math.max(...c_sum))];
+			color_index = c_sum.indexOf(Math.max(...c_sum))
+
+			color = palette[color_index];
+
+			palette.splice(color_index, 1);
+
+			c_sum.splice(color_index, 1);
+
+			color2_index = c_sum.indexOf(Math.max(...c_sum))
+
+			color2 = palette[color2_index];
 
 			card.style.backgroundColor = "rgb("+color[0]+","+color[1]+","+color[2]+")";
+
+			card.setAttribute("primary-color", card.style.backgroundColor);
+
+			card.setAttribute("secondary-color", "rgb("+color2[0]+","+color2[1]+","+color2[2]+")");
 
 		}
 
@@ -32,7 +54,7 @@ window.addEventListener('load', (event) => {
 
 		} else {
 
-			img.addEventListener('load', set_card_color );
+			img.addEventListener('load', set_card_color);
 
 		}
 

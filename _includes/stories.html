@@ -1,6 +1,6 @@
 {% assign latest_post=site.posts.last %}
 
-<div class="highlighted_story">
+<div class="highlighted_story" onclick="location.href='{{ site.baseurl }}{{ latest_post.url }}'">
 	{% include image_resolver.html src=latest_post.image %}
 
 	<div class="content">

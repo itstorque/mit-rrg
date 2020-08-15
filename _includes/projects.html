@@ -2,7 +2,7 @@
 
 	{% for project in site.projects %}
 
-		<div class="project_card">
+		<div class="project_card" onclick="location.href='{{ site.baseurl }}{{ project.url }}'">
 
 			{% include image_resolver.html src=project.image %}
 

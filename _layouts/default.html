@@ -7,9 +7,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;900&family=PT+Serif:wght@700&family=Raleway:wght@400;500;900&display=swap" rel="stylesheet">
 	<link href="{{ site.baseurl }}/resources/styles/style.css" rel="stylesheet">
 
-	{% if page.path contains '_posts' %}
+	{% if layout.css %}
 
-		<link href="{{ site.baseurl }}/resources/styles/post.css" rel="stylesheet">
+		<link href="{{ site.baseurl }}/resources/styles/{{ layout.css }}.css" rel="stylesheet">
 
 	{% endif %}
 
@@ -32,6 +32,9 @@
 	{% include nav.html %}
 
     {{ content }}
+
+	{% include reach_us.html %}
+
   </body>
 
 </html>
