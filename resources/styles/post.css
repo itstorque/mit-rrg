@@ -141,3 +141,11 @@
 	vertical-align: middle;
 	margin: 0px 10px 0px 20px;
 }
+
+/* DYNAMIC MENU STUFF */
+
+body.scrolled header#header {
+	padding-left: 1rem;
+	margin-left: -10vw;
+	margin-right: -10vw;
+}

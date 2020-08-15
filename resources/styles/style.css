@@ -89,6 +89,7 @@ nav .open .big_logo {
 	top: 0px;
 	position: sticky;
 	z-index: 100;
+	transition: all ease 0.2s
 }
 
 #menu_button {
@@ -106,26 +107,25 @@ nav .open .big_logo {
 	z-index: 100;
 }
 
-#menu_button span {
+#menu_button span, #menu_button span:before, #menu_button span:after {
 	background-color: black;
 	content: "";
 	display: block;
 	height: 2px;
-	left: 12px;
-	top: 24px;
 	position: absolute;
 	width: 26px;
-	transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in, box-shadow 0.2s ease-in;
+	transition-delay: 0.1s;
 }
 
-#menu_button span:before, #menu_button span:after {
-	background-color: black;
-	content: "";
-	display: block;
-	height: 2px;
-	position: absolute;
-	width: 26px;
-	transition: all 0.2s ease-in;
+body.scrolled #menu_button span, body.scrolled #menu_button span:before, body.scrolled #menu_button span:after {
+	/* only shadow when scrolled */
+	box-shadow: 0px 0px 10px 2px rgba(255,255,255,0.75);
+}
+
+#menu_button span {
+	left: 12px;
+	top: 24px;
 }
 #menu_button span:before {
 	top: 7px;
@@ -136,7 +136,10 @@ nav .open .big_logo {
 #menu_button.active span {
 	background-color: transparent;
 }
-#menu_button.active span:before, #menu_button.active span:after {
+#menu_button.active span,#menu_button.active span:before, #menu_button.active span:after {
+	box-shadow: 0px 0px 10px 2px rgba(255,255,255,0);
+	transition: all 0.2s ease-in, box-shadow 0.01s ease-out;
+	transition-delay: 0s;
 }
 #menu_button.active span:before {
 	top: 0;
@@ -744,4 +747,13 @@ footer .mail_icon {
 
 .rellax {
     transition: transform 30s cubic-bezier(0, 1.5, 0, 1);
+}
+
+/* DYNAMIC HEADER STUFF */
+
+body.scrolled header#header {
+	padding-left: 2rem;
+	padding-right: 3rem;
+	margin-left: -10vw;
+	margin-right: -10vw;
 }

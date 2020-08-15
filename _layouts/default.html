@@ -25,9 +25,11 @@
 	    <script src="{{ site.baseurl }}/resources/scripts/{{ script }}.js"></script>
 	{% endfor %}
 
+	<script src="{{ site.baseurl }}/resources/scripts/scroll_detection.js"></script>
+
   </head>
 
-  <body class="{{ page.title }}">
+  <body class="{{ page.title | url_encode }}">
 
 	{% include nav.html %}
 
