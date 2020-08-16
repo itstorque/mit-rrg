@@ -1,6 +1,6 @@
 ---
 name: Some Project Title
-image: stata.jpg
+# forgot to define image here on purpose to test fallback...
 team: marine
 excerpt: This is a picture of the Stata Center, with some weird color grading.
 ---

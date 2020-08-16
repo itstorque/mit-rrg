@@ -5,7 +5,9 @@ css: post
 
 <div class="post">
 
-	{% include image_resolver.html src=page.image class="post_img" %}
+	{%- assign post_image = page.image | default: page.thumb | default: "fallback_project.jpg" -%}
+
+	{% include image_resolver.html src=post_image class="post_img" %}
 
 	<h1 class="post_title">{{ page.title }}</h1>
 

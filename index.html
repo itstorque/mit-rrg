@@ -13,7 +13,7 @@ title: Home
 <div class="splash">
 	<!-- {% include image_resolver.html src="jellyfish.jpg" class="bg" %} -->
 	<div class="bg" id="splash_bg">
-		{% include image_resolver.html src="jellyfish.jpg" class="rellax" rellax_speed="-7" %}
+		{% include image_resolver.html src="https://source.unsplash.com/2qSqXJLLM_Y/480x270" id="splash_bg_img" class="rellax" rellax_speed="-7" %}
 	</div>
 
 	{% include big_logo.html %}
@@ -35,11 +35,24 @@ title: Home
 
 	window.addEventListener("load", setupRellax);
 
-	document.getElementById("splash_bg").addEventListener('load', setupRellax);
+	document.getElementById("splash_bg_img").onload = finishedLoadingPhotoRes1;
 
 	var rellax = new Rellax('.rellax', {
 		center:true
 	});
+
+	function finishedLoadingPhotoRes1() {
+		setupRellax();
+		document.getElementById("splash_bg_img").onload = finishedLoadingPhotoRes2;
+		document.getElementById("splash_bg_img").src= "https://source.unsplash.com/2qSqXJLLM_Y/1920x1080";
+		setupRellax();
+	}
+
+	function finishedLoadingPhotoRes2() {
+		setupRellax();
+		document.getElementById("splash_bg_img").src= "https://source.unsplash.com/2qSqXJLLM_Y/3840x2160";
+		setupRellax();
+	}
 
 	function setupRellax() {
 		rellax.refresh();

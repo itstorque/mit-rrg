@@ -4,7 +4,9 @@
 
 		<div class="project_card" onclick="location.href='{{ site.baseurl }}{{ project.url }}'">
 
-			{% include image_resolver.html src=project.image %}
+			{%- assign preview_image = project.thumb | default: project.image | default: "fallback_project_thumb.jpg" -%}
+
+			{% include image_resolver.html src=preview_image %}
 
 			<h3>{{ project.name }}</h3>
 
