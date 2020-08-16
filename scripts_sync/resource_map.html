@@ -12,9 +12,11 @@ sitemap: false
 }}{% for file in all_files %}
 	{%- if file.url -%}
 		{%- assign end = file.url | slice: -1 -1 -%}
-		{%- if end == "/" -%}
-			{% assign size = file.url | size | minus: 1 %}
-			{{ file.url | slice: 0, size }}~,
+		{%- if file.url == "/" -%}
+			/index.html,
+		{%- elsif end == "/" -%}
+			{% assign size = file.url | size | minus: 1
+			%}{{ file.url | slice: 0, size }}~,
 		{%- else -%}
 			{{ file.url }},
 		{%- endif -%}

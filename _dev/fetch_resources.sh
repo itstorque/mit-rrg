@@ -9,7 +9,7 @@ fi
 
 url=https://esiresponse.github.io;
 
-if [ $1 == "-d" ]; then
+if [ $1 -eq "-d" ]; then
 	url=http://localhost:4000/mit-rrg;
 	final="_site";
 fi
@@ -24,14 +24,14 @@ IFS=',' read -r -a files <<< "$data";
 
 for file in "${files[@]}"
 do
-	if [ "${file: -1}" == "~" ]; then
-		target="${file: -1}.html";
-		file="${file: -1}/";
+	if [ "${file: -1}" -eq "~" ]; then
+		target="${file%?}.html";
+		file="${file%?}/";
 	else
 		target=$file;
 	fi
-    echo "$url$file";
-	curl -L "$url$file" -o "$dir/_fetch_cache$target" --create-dirs
+	echo "$url$file > $dir/_fetch_cache$target";
+	curl -LsS "$url$file" -o "$dir/_fetch_cache$target" --create-dirs;
 done
 
 rm -rf "$dir/$final";
