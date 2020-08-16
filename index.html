@@ -37,23 +37,19 @@ title: Home
 	document.getElementById("splash_bg_img").onload = finishedLoadingPhotoRes1;
 
 	var rellax = new Rellax('.rellax', {
-		center:true
+		horizontal:true
 	});
 
 	function finishedLoadingPhotoRes1() {
 		setupRellax();
-		document.getElementById("splash_bg_img").onload = finishedLoadingPhotoRes2;
+		document.getElementById("splash_bg_img").onload = null;
 		document.getElementById("splash_bg_img").src= "https://source.unsplash.com/2qSqXJLLM_Y/1920x1080";
 		setupRellax();
 	}
 
-	function finishedLoadingPhotoRes2() {
-		setupRellax();
-		document.getElementById("splash_bg_img").src= "https://source.unsplash.com/2qSqXJLLM_Y/3840x2160";
-		setupRellax();
-	}
-
 	function setupRellax() {
+		document.getElementById("splash_bg_img").src= "https://source.unsplash.com/2qSqXJLLM_Y/3840x2160";
+		document.getElementById("splash_bg_img").onload = null;
 		rellax.refresh();
 	}
 
