@@ -1,7 +1,9 @@
 <?php
 
-  $output = shell_exec("pwd 2>&1");
+  $output = shell_exec("cd ../..; _dev/fetch_resources.sh 2>&1");
 
-  echo $output=="Script is not complete.";
+  echo nl2br($output);
+
+  echo "<br/><br/>Update Complete :)";
 
  ?>
