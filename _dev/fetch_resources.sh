@@ -9,7 +9,7 @@ fi
 
 url=https://esiresponse.github.io;
 
-if [ $1 -eq "-d" ]; then
+if [ $1 == "-d" ]; then
 	url=http://localhost:4000/mit-rrg;
 	final="_site";
 fi
@@ -24,7 +24,7 @@ IFS=',' read -r -a files <<< "$data";
 
 for file in "${files[@]}"
 do
-	if [ "${file: -1}" -eq "~" ]; then
+	if [ "${file: -1}" == "~" ]; then
 		target="${file%?}.html";
 		file="${file%?}/";
 	else
