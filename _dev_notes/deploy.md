@@ -15,3 +15,5 @@ log in to athena /mit/esiresponse
 # Remote manual update
 
 Go to url [https://esiresponse.mit.edu/scripts_sync/update.php](https://esiresponse.mit.edu/scripts_sync/update.php)
+
+# GitHub Action

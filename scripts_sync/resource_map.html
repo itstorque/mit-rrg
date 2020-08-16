@@ -8,10 +8,10 @@ sitemap: false
 	| concat: site.pages
 	| concat: site.documents
 %}{{
-
+	''
 }}{% for file in all_files %}
 	{%- if file.url -%}
-		{%- assign end = file.url | slice: -1 -1 -%}
+		{%- assign end = file.url | slice: -1 -%}
 		{%- if file.url == "/" -%}
 			/index.html,
 		{%- elsif end == "/" -%}

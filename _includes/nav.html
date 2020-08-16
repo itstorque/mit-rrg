@@ -2,7 +2,14 @@
 
 <header id="header">
   <nav>
-	<a href="{{ site.baseurl }}/" class="small_logo"><img src="{{ site.baseurl }}/resources/images/small_logo.svg"/></a>
+	<a href="{{ site.baseurl }}/" class="small_logo">
+		<!-- <img src="{{ site.baseurl }}/resources/images/small_logo.svg"/> -->
+
+		<svg viewBox="0 0 99 49">
+			<use xlink:href="{{ site.baseurl }}/resources/images/small_logo.svg#Logo" />
+		</svg>
+
+	</a>
 	<button id="menu_button">
 	  <span></span>
 	</button>

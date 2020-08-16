@@ -3,6 +3,9 @@
   --big_logo_c2: white;
   --mail_c1: black;
   --heart_c1: black;
+
+  --small_logo_c1: #003B4D;
+  --small_logo_c2: #FF7F50;
 }
 
 body {
@@ -81,6 +84,10 @@ a.link:hover {
 }
 
 /* NAVIGATION */
+
+nav a, nav .small_logo {
+	width: 99px;
+}
 
 nav .small_logo {
 	opacity: 1;
@@ -446,12 +453,6 @@ footer .mail_icon {
 	position: absolute;
 	top: -10px;
 	background-color: #53B4D4;
-	/* background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	background-image: url('https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb'); */
-	/* object-fit: cover; */
-	/* width: 100%; */
 }
 
 .splash .bg img {
@@ -459,11 +460,6 @@ footer .mail_icon {
 	width: 100%;
 	height: 100%;
 }
-
-/* .splash .simpleParallax {
-	width: 100%;
-	margin-top: -20px;
-} */
 
 .splash .big_logo {
 	opacity: 1;
@@ -895,4 +891,95 @@ body.scrolled header#header {
 	padding-right: 3rem;
 	margin-left: -10vw;
 	margin-right: -10vw;
+}
+
+/* MOBILE STUFF */
+
+@media only screen and (max-width: 800px) {
+
+	/* MAIN ELEMENTS */
+
+	body {
+		width: 96vw;
+		margin-left: 2vw;
+		font-family: 'Nunito', sans-serif;
+	}
+
+	h3 {
+		margin: 2em 1em 2em 1em;
+	}
+
+	.Home p {
+		margin: 2em 1em 2em 1em;
+		padding-left: 1em;
+	}
+
+	/* MENU */
+
+	.open {
+		--small_logo_c1: white;
+		--small_logo_c2: coral;
+	}
+
+	body header#header, body.scrolled header#header {
+		padding-left: 0.2em;
+		padding-right: 0;
+		padding-top: 0.8em;
+		margin: 0px;
+	}
+
+	#menuBG {
+		transform: translateY(-100vh) translateY(-20px);
+	}
+
+	#menu ul {
+		font-size: 0.8em;
+	    text-align: left;
+	    margin-right: 0;
+		margin-left: 1em;
+	}
+
+	#menu ul li a {
+		font-size: 2rem;
+		width: 100%;
+	}
+
+	/* OTHER REUSABLES */
+
+	.reach-us {
+		font-size: 0.75em;
+	}
+
+	/* HOME */
+
+	.splash .bg {
+		height: 100%;
+	}
+
+	.splash {
+		left: -2vw;
+		height: 70vh;
+		margin: 0;
+		margin-bottom: -2.5em;
+	}
+
+	.big_logo {
+		opacity: 0;
+	}
+
+	.splash .big_logo {
+		width: 80%;
+		max-width: none;
+		position: relative;
+		margin: 10px;
+		margin-top: 100px;
+		bottom: 0;
+		left: 0;
+		opacity: 1;
+	}
+
+	header.open nav .small_logo {
+		opacity: 1;
+	}
+
 }
