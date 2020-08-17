@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "This is a project story!"
 author_kerb: ffarrow
 team: marine

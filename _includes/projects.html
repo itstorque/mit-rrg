@@ -1,5 +1,7 @@
 <div class="project_cards">
 
+	<div style="width: 15vw" class="only_desktop"><!-- This is a spacer for the beginning of the project_cards --></div>
+
 	{% for project in site.projects %}
 
 		<div class="project_card" onclick="location.href='{{ site.baseurl }}{{ project.url }}'">

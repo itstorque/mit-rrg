@@ -41,6 +41,10 @@
 		display: block;
 	}
 
+	.only_desktop {
+		display: none;
+	}
+
 	/* MENU */
 
 	.open {
@@ -197,6 +201,11 @@
 	/* PROJECTS PAGE */
 
 	/** PROJECT STORIES **/
+
+	.project_cards {
+		grid-template-columns: repeat(auto-fill, 230px);
+		padding-left: 10vw;
+	}
 
 	.highlighted_story {
 		width: 100%;

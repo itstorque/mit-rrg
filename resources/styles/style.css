@@ -88,6 +88,10 @@ a.link:hover, a.link:active {
 	display: none;
 }
 
+.only_desktop {
+	display: inherit;
+}
+
 /* NAVIGATION */
 
 nav .small_logo {
@@ -638,15 +642,17 @@ footer .mail_icon {
 .project_cards {
 	display: grid;
 	grid-gap: 10px;
-	grid-template-columns: repeat(6, 300px);
+	grid-template-columns: repeat(auto-fill, 240px);
 	grid-template-rows: minmax(150px, 1fr);
-	padding: 0 20px;
 	overflow-x: scroll;
 	overflow-y: hidden;
 	position: absolute;
+	width: 100vw;
 	left: 0;
 	right: 0;
-	padding: 0 20vw;
+	padding: 0;
+	display: grid;
+	grid-auto-flow: column;
 }
 
 .project_card {
