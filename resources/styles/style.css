@@ -3,6 +3,7 @@
   --big_logo_c2: white;
   --mail_c1: black;
   --heart_c1: black;
+  --heart_c2: black;
 
   --small_logo_c1: #003B4D;
   --small_logo_c2: #FF7F50;
@@ -69,7 +70,7 @@ a.link {
 	transition: all 0.2s ease-in-out;
 }
 
-a.link:hover {
+a.link:hover, a.link:active {
 	color: coral;
 }
 
@@ -81,6 +82,10 @@ a.link:hover {
 	max-width: 50vw;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.only_mobile {
+	display: none;
 }
 
 /* NAVIGATION */
@@ -153,6 +158,8 @@ body.scrolled #menu_button span, body.scrolled #menu_button span:before, body.sc
 #menu_button span {
 	left: 12px;
 	top: 24px;
+	transition: all 0.1s ease-out, box-shadow 0.2s ease-in;
+	transition-delay: 0.2s;
 }
 #menu_button span:before {
 	top: 7px;
@@ -162,8 +169,16 @@ body.scrolled #menu_button span, body.scrolled #menu_button span:before, body.sc
 }
 #menu_button.active span {
 	background-color: transparent;
+	width: 0;
+	transition: all 0.2s ease-out, box-shadow 0.2s ease-in;
+	transition-delay: 0s;
 }
-body.scrolled #menu_button.active span, body.scrolled #menu_button.active span:before, body.scrolled #menu_button.active span:after {
+body.scrolled #menu_button.active span {
+	box-shadow: 0px 0px 10px 2px rgba(255,255,255,0);
+	transition: all 0.2s linear, box-shadow 0.2s ease-in;
+	transition-delay: 0s;
+}
+body.scrolled #menu_button.active span:before, body.scrolled #menu_button.active span:after {
 	box-shadow: 0px 0px 10px 2px rgba(255,255,255,0);
 	transition: all 0.2s ease-in, box-shadow 0.01s ease-out;
 	transition-delay: 0s;
@@ -259,11 +274,11 @@ body.scrolled #menu_button.active span, body.scrolled #menu_button.active span:b
   text-transform: uppercase;
 }
 
-#menu ul:hover li a {
+#menu ul:hover li a, #menu ul:active li a {
   opacity: 0.5;
 }
 
-#menu ul li:hover a {
+#menu ul li:hover a, #menu ul li:active a {
   opacity: 1;
 }
 
@@ -292,7 +307,7 @@ footer a img {
 	transition: all 0.1s ease-in;
 }
 
-footer a:hover img {
+footer a:hover img, footer a:active img {
 	transform: translateX(9.5em);
 }
 
@@ -387,12 +402,12 @@ footer .mail_icon {
 	margin-right: -0.5em;
 }
 
-.reach-us h4:hover {
+.reach-us h4:hover, .reach-us h4:active {
 	color: coral;
 	--mail_c1: coral;
 }
 
-.reach-us h4:hover .mail_icon {
+.reach-us h4:hover .mail_icon, .reach-us h4:active .mail_icon {
 	animation-name: fly_mail;
     animation-duration: 0.8s;
 	animation-timing-function: cubic-bezier(.48,.01,0,1.04);
@@ -561,20 +576,12 @@ footer .mail_icon {
 
 /*** CARD HOVER ACTIONS ***/
 
-.card:hover {
-
-}
-
-.card:hover img {
+.card:hover img, .card:active img {
 	height: 220px;
 }
 
-.card:hover h5 {
+.card:hover h5, .card:active h5 {
 	margin-bottom: 20px;
-}
-
-.card:hover h6 {
-
 }
 
 /** INLINE MEMBER **/
@@ -716,12 +723,13 @@ footer .mail_icon {
 	opacity: 0;
 }
 
-.project_card:hover::before {
+.project_card:hover::before, .project_card:active::before {
 	transform: scale(1.02);
 	opacity: 1;
 }
 
 /* TODO: decide whether this was worth it lol*/
+/* Add :active stuff */
 /* .project_card:nth-child(2)::before {
 	color: coral;
 }
@@ -742,15 +750,15 @@ footer .mail_icon {
 	background-color: rgba(216,151,56,0.2);
 } */
 
-.project_card:hover img {
+.project_card:hover img, .project_card:active img {
 	transform: scale(1.02);
 }
 
-.project_card:hover h3 {
+.project_card:hover h3, .project_card:active h3 {
 	transform: translateY(0.5em);
 }
 
-.project_card:hover p {
+.project_card:hover p, .project_card:active p {
 	transform: translateY(1em);
 }
 
@@ -811,20 +819,20 @@ footer .mail_icon {
 	opacity: 0;
 }
 
-.highlighted_story:hover::before {
+.highlighted_story:hover::before, .highlighted_story:active::before {
 	transform: scale(1.02);
 	opacity: 1;
 }
 
-.highlighted_story:hover img {
+.highlighted_story:hover img, .highlighted_story:active img {
 	transform: scale(1.02);
 }
 
-.highlighted_story:hover h1 {
+.highlighted_story:hover h1, .highlighted_story:active h1 {
 	transform: translateY(0.5em);
 }
 
-.highlighted_story:hover p {
+.highlighted_story:hover p, .highlighted_story:active p {
 	transform: translateY(1em);
 }
 
@@ -837,12 +845,13 @@ footer .mail_icon {
 	margin-right: -0.5em;
 }
 
-.reach-us.donate h4:hover {
+.reach-us.donate h4:hover, .reach-us.donate h4:active {
 	color: #ee5253;
 	--heart_c1: #ee5253;
+	--heart_c2: #ee5253;
 }
 
-.reach-us h4:hover .heart_icon {
+.reach-us h4:hover .heart_icon, .reach-us h4:active .heart_icon {
 	animation-name: heart_jump;
     animation-duration: 1.6s;
 	animation-timing-function: cubic-bezier(.48,.01,0,1.04);
@@ -891,95 +900,4 @@ body.scrolled header#header {
 	padding-right: 3rem;
 	margin-left: -10vw;
 	margin-right: -10vw;
-}
-
-/* MOBILE STUFF */
-
-@media only screen and (max-width: 800px) {
-
-	/* MAIN ELEMENTS */
-
-	body {
-		width: 96vw;
-		margin-left: 2vw;
-		font-family: 'Nunito', sans-serif;
-	}
-
-	h3 {
-		margin: 2em 1em 2em 1em;
-	}
-
-	.Home p {
-		margin: 2em 1em 2em 1em;
-		padding-left: 1em;
-	}
-
-	/* MENU */
-
-	.open {
-		--small_logo_c1: white;
-		--small_logo_c2: coral;
-	}
-
-	body header#header, body.scrolled header#header {
-		padding-left: 0.2em;
-		padding-right: 0;
-		padding-top: 0.8em;
-		margin: 0px;
-	}
-
-	#menuBG {
-		transform: translateY(-100vh) translateY(-20px);
-	}
-
-	#menu ul {
-		font-size: 0.8em;
-	    text-align: left;
-	    margin-right: 0;
-		margin-left: 1em;
-	}
-
-	#menu ul li a {
-		font-size: 2rem;
-		width: 100%;
-	}
-
-	/* OTHER REUSABLES */
-
-	.reach-us {
-		font-size: 0.75em;
-	}
-
-	/* HOME */
-
-	.splash .bg {
-		height: 100%;
-	}
-
-	.splash {
-		left: -2vw;
-		height: 70vh;
-		margin: 0;
-		margin-bottom: -2.5em;
-	}
-
-	.big_logo {
-		opacity: 0;
-	}
-
-	.splash .big_logo {
-		width: 80%;
-		max-width: none;
-		position: relative;
-		margin: 10px;
-		margin-top: 100px;
-		bottom: 0;
-		left: 0;
-		opacity: 1;
-	}
-
-	header.open nav .small_logo {
-		opacity: 1;
-	}
-
 }

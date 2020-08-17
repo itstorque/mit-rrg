@@ -1,19 +1,23 @@
-<div class="card_container">
+<div class="mobile_card_container">
+	<div class="card_container">
 
-	{% for member in site.members %}
+		{% for member in site.members %}
 
-		<div class="card" primary-color="#444" secondary-color="#aaa">
-			<img src="{{ site.baseurl }}/resources/headshots/{{ member.title | downcase }}.png" class="upper"/>
-			<div>
-				<h5>{{ member.name }}</h5>
+			<div class="card" primary-color="#444" secondary-color="#aaa">
+				<img src="{{ site.baseurl }}/resources/headshots/{{ member.title | downcase }}.png" class="upper"/>
+				<div>
+					<h5>{{ member.name }}</h5>
 
-				<h6>{{ member.affiliation }}</h6>
-				<h6 class="spec">{{ member.detail }}</h6>
+					<h6>{{ member.affiliation }}</h6>
+					<h6 class="spec">{{ member.detail }}</h6>
+				</div>
+				<img src="{{ site.baseurl }}/resources/headshots/{{ member.title | downcase }}.png" class="lower"/>
 			</div>
-			<img src="{{ site.baseurl }}/resources/headshots/{{ member.title | downcase }}.png" class="lower"/>
-		</div>
 
-	{% endfor %}
+		{% endfor %}
 
+		<div style="width: 1em;" class="only_mobile"></div>
+
+	</div>
 
 </div>
