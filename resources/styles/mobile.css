@@ -62,10 +62,6 @@
 		margin: 0;
 	}
 
-	/* body.scrolled header#header {
-		background-color: white;
-	} */
-
 	#menuBG {
 		transition: all 0.2s ease-in;
 		background-color: white;
@@ -73,12 +69,14 @@
 
 	body #menuBG:not(.open) {
 		transform: translateY(-100%) translateY(65px);
-		transition: all 0.2s ease-in;
+		transition: all 0.2s ease;
+		opacity: 0;
 	}
 
 	body.scrolled #menuBG:not(.open) {
-		transform: translateY(-100%) translateY(65px);
+		/* transform: translateY(-100%) translateY(65px) scaleY(1); */
 		background-color: white;
+		opacity: 1;
 	}
 
 	body header#header nav, body.scrolled header#header nav {

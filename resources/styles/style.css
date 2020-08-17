@@ -90,7 +90,7 @@ a.link:hover, a.link:active {
 
 /* NAVIGATION */
 
-nav a, nav .small_logo {
+nav .small_logo {
 	width: 99px;
 }
 
