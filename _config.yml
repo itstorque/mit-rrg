@@ -42,3 +42,9 @@ defaults:
       path: "resources/**/*.svg"
     values:
       sitemap: true
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  blanklines: false
