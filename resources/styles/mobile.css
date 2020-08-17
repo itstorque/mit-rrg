@@ -68,10 +68,11 @@
 
 	#menuBG {
 		transition: all 0.2s ease-in;
+		background-color: white;
 	}
 
 	body #menuBG:not(.open) {
-		transform: translateY(-100%) translateY(0px);
+		transform: translateY(-100%) translateY(65px);
 		transition: all 0.2s ease-in;
 	}
 
@@ -84,10 +85,6 @@
 		height: fit-content;
 	    width: 100%;
 	    display: inline-block;
-	}
-
-	#menuBG {
-		background-color: white;
 	}
 
 	#menu ul {
@@ -183,11 +180,39 @@
 	.inline-member {
 		grid-template-columns: 100%;
 		grid-template-rows: min-content;
+		text-align: center;
 	}
 
 	.inline-member img {
 		margin: -1em auto;
-		border-radius: 50%;
+	}
+
+	.inline-member h6 {
+		display: none;
+	}
+
+	.inline-member h6.spec {
+		display: block;
+		font-size: 1.2em;
+	}
+
+	/* PROJECTS PAGE */
+
+	/** PROJECT STORIES **/
+
+	.highlighted_story {
+		width: 100%;
+		margin: 0;
+	}
+
+	.highlighted_story .content {
+		padding: 0 0.5em;
+	}
+
+	.highlighted_story p {
+		font-size: 1em;
+		font-weight: 300;
+		transition: all 0.2s ease;
 	}
 
 	/* EXTRA SMALL STUFF */

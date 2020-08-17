@@ -149,3 +149,17 @@ body.scrolled header#header {
 	margin-left: -10vw;
 	margin-right: -10vw;
 }
+
+/* MOBILE SPECIFIC */
+
+@media only screen and (max-width: 800px) {
+
+	.post .team_members {
+		flex-direction: column;
+	}
+
+	.post .team_member {
+		display: block;
+	}
+
+}

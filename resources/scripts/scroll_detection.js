@@ -5,15 +5,11 @@ window.addEventListener('load', (event) => {
 
 	resize_func = (event) => {
 
-		document.body.classList.add("scrolled");
-
 		offset = window.innerHeight*0.7+40;
 
 		if (window.innerWidth < 800) {
 			offset = window.innerHeight*0.1+40;
 		}
-
-		console.log("resize", window.innerWidth < 800, offset)
 
 		scroll_func();
 
@@ -26,8 +22,6 @@ window.addEventListener('load', (event) => {
 		} else if (window.scrollY <= offset) {
 			document.body.classList.remove("scrolled");
 		}
-
-		console.log("scroll", window.scrollY <= offset)
 
 	}
 

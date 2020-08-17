@@ -600,6 +600,7 @@ footer .mail_icon {
 	height: auto;
 	object-fit: cover;
 	max-width: 200px;
+	border-radius: 50%;
 }
 
 .inline-member div {
@@ -765,7 +766,6 @@ footer .mail_icon {
 /** PROJECT STORIES **/
 
 .highlighted_story {
-	margin-top: -1em;
 	width: 70%;
 	margin: 0 15% 5em 15%;
 	cursor: pointer;
