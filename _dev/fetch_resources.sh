@@ -7,7 +7,7 @@ if [ $path == "_dev" ]; then
 	dir="..";
 fi
 
-url=https://esiresponse.github.io;
+url=https://tareqdandachi.github.io/mit-rrg;
 
 if [ $1 == "-d" ]; then
 	url=http://localhost:4000/mit-rrg;
@@ -39,3 +39,5 @@ rm -rf "$dir/$final";
 mv "$dir/_fetch_cache" "$dir/$final";
 
 mv "$dir/$final/scripts_sync/htaccess.html" "$dir/$final/.htaccess";
+
+wget -O "$dir/$final/scripts_status.svg" "https://img.shields.io/static/v1?label=Last%20Updated&message=$(date +"%H:%M:%S %m-%d-%y")&color=informational";

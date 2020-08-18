@@ -1,20 +1,24 @@
-# [esiresponse.scripts.mit.edu](esiresponse.scripts.mit.edu)
-Repo for the MIT ESI RRG Website
+# [esiresponse.scripts.mit.edu](https://esiresponse.scripts.mit.edu)
+Repo for MIT ESI's Rapid Response Group (RRG) Website
+
+[![Status](https://esiresponse.scripts.mit.edu/scripts_status.svg)](https://esiresponse.scripts.mit.edu)
 
 ## Updating Content
+_Updating content refers to creating a new entry or editing an existing one._
 
-### Front Matter
+Updating content on the site usually involves manipulating
+[markdown](_dev_notes/markdown.md) files, a quick cheatsheet
+for markdown can be found [here](_dev_notes/markdown.md).
 
-### Adding a Project
+Depending on the type of the content you want to update,
+follow the guides linked below:
 
-To add a project, create a new markdown file in the [\_projects](\_projects) directory, the filename should be [project-blurb.md]. This will create a project at the url https://esiresponse.mit.edu/mit-rrg/projects/project-blurb/.
+ - [Projects](_dev_notes/projects.md)
+ - [Project Stories/Posts](_dev_notes/stories.md)
+ - [Members](_dev_notes/members.md)
 
+## Development and Troubleshooting
 
+See [\_dev\_notes/DEVELOP.md](_dev_notes/DEVELOP.md).
 
-### Adding a Project Story
-
-### Adding a Member
-
-### Adding Images
-
-## Development
+**Created by Tareq El Dandachi**
