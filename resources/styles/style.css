@@ -642,8 +642,7 @@ footer .mail_icon {
 
 .project_cards {
 	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: repeat(auto-fill, 240px);
+	grid-gap: 2em;
 	grid-template-rows: minmax(150px, 1fr);
 	overflow-x: scroll;
 	overflow-y: hidden;
@@ -654,6 +653,12 @@ footer .mail_icon {
 	padding: 0;
 	display: grid;
 	grid-auto-flow: column;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.project_cards::-webkit-scrollbar {
+  display: none;
 }
 
 .project_card {
@@ -675,7 +680,12 @@ footer .mail_icon {
 	margin-top: 0.4em;
 	margin-bottom: 1em;
 	margin-left: 0.5rem;
-	max-height: 3.8em;
+	max-height: 2.65em;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	line-height: 1.3em;
 	transition: all 0.2s ease-out;
 	transition-delay: 0.1s;
@@ -687,11 +697,15 @@ footer .mail_icon {
 	font-weight: 300;
 	font-style: normal;
 	margin-top: -0.5em;
-	margin-left: 0.5rem;
+	margin-left: -0.5rem;
 	display: block;
 	text-overflow: ellipsis;
 	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
 	overflow: hidden;
+	text-overflow: ellipsis;
 	max-height: 3.8em;
 	line-height: 1.4em;
 	transition: all 0.2s ease-out;
