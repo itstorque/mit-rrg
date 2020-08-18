@@ -40,4 +40,10 @@ mv "$dir/_fetch_cache" "$dir/$final";
 
 mv "$dir/$final/scripts_sync/htaccess.html" "$dir/$final/.htaccess";
 
+echo "Need to migrate site.baseurl";
+
+find . -type f -exec sed -i 's/\/mit-rrg\//\//g' {} +;
+
+echo "Migration Complete.";
+
 wget -O "$dir/$final/scripts_status.svg" "https://img.shields.io/static/v1?label=Last%20Updated&message=$(date +"%H:%M:%S %m-%d-%y")&color=informational";
