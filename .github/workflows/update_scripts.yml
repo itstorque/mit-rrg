@@ -2,8 +2,7 @@
 name: Update Scripts
 
 on:
-  push:
-    branches: [ master ]
+  page_build:
 
 jobs:
 
