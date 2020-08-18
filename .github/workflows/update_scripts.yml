@@ -1,0 +1,16 @@
+# Update scripts site on push
+name: Update Scripts
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  scripts-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: http://esiresponse.scripts.mit.edu/scripts_sync/update.php -q -O -
